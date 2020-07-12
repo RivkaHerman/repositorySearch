@@ -1,0 +1,36 @@
+﻿@*@model mvc.Models.RootObject*@
+
+@model mvc.Models.Repository
+@{
+    ViewBag.Title = "GetJsonDataModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>REPOSITORY SEARCH</h2>
+<br />
+
+@*<form action="" method="post">*@
+
+<h4>Please insert a word for search:</h4>
+<input type="text" name="searchText" />
+<input type="submit" value="Submit" />
+
+@*</form>*@
+
+<br /><br />
+
+@{
+    foreach (var item in Model.Items)
+    {
+        <div>
+            <h5><u>Avatar URL:</u></h5>
+            @item.Owner.Avatar_url
+            <h5><u>Name:</u></h5>
+            @item.Name
+            <br /><br />
+            <input type="submit" value="Bookmark" />
+            <hr />
+        </div>
+    }
+}
