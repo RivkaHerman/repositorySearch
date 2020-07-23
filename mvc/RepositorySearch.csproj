@@ -121,10 +121,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RepositoriesController.cs" />
+    <Compile Include="Controllers\BookmarksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\JsonModel\RootObject.cs" />
+    <Compile Include="Models\Bookmark.cs" />
+    <Compile Include="Models\Items.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,7 +166,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\MyHome.cshtml" />
-    <Content Include="Views\Home\GetJsonDataModel.cshtml" />
+    <Content Include="Views\Repositories\GetJsonDataModel.cshtml" />
+    <Content Include="Views\Repositories\SearchForRepository.cshtml" />
+    <Content Include="Views\Bookmarks\DisplayBookmarks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

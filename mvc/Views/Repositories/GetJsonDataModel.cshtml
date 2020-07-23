@@ -1,0 +1,46 @@
+﻿
+@model mvc.Models.Repository
+@{
+    ViewBag.Title = "GetJsonDataModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>REPOSITORY SEARCH</h2>
+<br />
+
+@using (Html.BeginForm("GetJsonDataModel", "Repositories"))
+
+//getting the word for search
+{
+    <h4>Please insert a word for search:</h4>
+    <input type="text" name="searchText" />
+    <input type="submit" value="Submit" />
+}
+
+<br /><br />
+
+@{
+    foreach (var item in Model.Items)
+    {
+      <div>
+          <h5><u>Avatar URL:</u></h5>
+          @item.Owner.Avatar_url
+          <h5><u>Name:</u></h5>
+          @item.Name
+          <br /><br />
+
+          @using (Html.BeginForm("SaveToSession", "Repositories"))
+          {
+              <input type="hidden" name="AvatarURL" value=@item.Owner.Avatar_url />
+              <input type="hidden" name="Name" value=@item.Name />
+              <input type="submit" value="Bookmark" />
+          }
+          <hr />
+      </div>
+    }
+}
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />

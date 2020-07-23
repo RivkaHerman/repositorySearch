@@ -10,19 +10,29 @@ namespace mvc
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-           
-
             routes.MapRoute(
                name: "Home",
-               url: "Home/myHome",
+               url: "home/myHome",
                defaults: new { controller = "Home", action = "ShowHomePage", id = UrlParameter.Optional }
            );
+          
+            routes.MapRoute(
+              name: "Display",
+              url: "displayBookmarks",
+              defaults: new { controller = "Bookmarks", action = "DisplayBookmarks", id = UrlParameter.Optional }
+          );
 
             routes.MapRoute(
               name: "Json",
               url: "Json",
-              defaults: new { controller = "Home", action = "GetJsonDataModel", id = UrlParameter.Optional }
+              defaults: new { controller = "Repositories", action = "GetJsonDataModel", id = UrlParameter.Optional }
           );
+
+            routes.MapRoute(
+             name: "SearchForRepository",
+             url: "repositories/searchForRepository",
+             defaults: new { controller = "Repositories", action = "GetJsonDataModel", id = UrlParameter.Optional }
+         );
 
             routes.MapRoute(
               name: "DefaultRoute",
